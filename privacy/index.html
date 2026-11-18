@@ -32,15 +32,16 @@ try{let s;try{s=sessionStorage.getItem("vdl-boot");sessionStorage.setItem("vdl-b
 <main id="main">
 <section aria-labelledby="short">
  <h2 id="short">the_short_version</h2>
- <p><span class="ok">We don't collect any data.</span> The app has no account, no ads, no analytics, no tracking and no servers, and it makes no network requests of its own. Everything it records is saved on your iPhone, and it only leaves your iPhone when you choose to share it.</p>
+ <p><span class="ok">We don't collect any data.</span> The app has no account, no ads, no analytics, no tracking and no servers. Everything it records is saved on your iPhone, and it only leaves your iPhone when you choose to share it.</p>
+ <p>The one thing the app sends, starting with version 1.1, is your approximate location (rounded to about 1 km) to the free weather service Open-Meteo, so each run can carry the weather at the time. You can turn that off on the Record screen. Version 1.0 makes no network requests of its own.</p>
 </section>
 <section aria-labelledby="records">
  <h2 id="records">what_the_app_records_on_your_iphone</h2>
  <p>When you press record, the app saves a folder for that run in its Documents folder on your iPhone:</p>
  <ul>
-  <li><strong>Engine log (<code>.csv</code>):</strong> values read from your car through the OBD-II adapter: engine speed, vehicle speed, accelerator pedal or throttle position, manifold and barometric pressure, and ambient air temperature. The app does not read your car's VIN or fault codes.</li>
-  <li><strong>GPS track (<code>.gpx</code>):</strong> position, speed, heading and altitude with timestamps, from your GPS receiver or the iPhone's Location Services.</li>
-  <li><strong>Summary (<code>session.json</code>):</strong> the vehicle name you typed, the start and end time, which devices were used, and whether the GoPro recorded.</li>
+  <li><strong>Engine log (<code>.csv</code>):</strong> values read from your car through the OBD-II adapter: engine speed, vehicle speed, accelerator pedal or throttle position, manifold and barometric pressure, and ambient air temperature. From version 1.1 it also holds the air pressure from the iPhone's barometer and the weather fetched for the run. The app does not read your car's VIN or fault codes.</li>
+  <li><strong>GPS track (<code>.gpx</code>):</strong> position, speed, heading and altitude with timestamps, from your GPS receiver or the iPhone's Location Services. From version 1.1 each point also has the iPhone's barometric pressure and altitude change.</li>
+  <li><strong>Summary (<code>session.json</code>):</strong> the vehicle name you typed, the start and end time, which devices were used, whether the GoPro recorded, and (from version 1.1) the weather fetched for the run.</li>
  </ul>
  <p>The app also remembers, on your iPhone, the last vehicle name you typed and the Bluetooth identifiers of the devices you paired, so it can reconnect to them.</p>
 </section>
@@ -48,19 +49,21 @@ try{let s;try{s=sessionStorage.getItem("vdl-boot");sessionStorage.setItem("vdl-b
  <h2 id="perm">permissions_and_why</h2>
  <ul>
   <li><strong>Bluetooth:</strong> to connect to your OBD-II adapter, GPS receiver and GoPro. For the GoPro, the app only starts and stops recording, keeps the camera awake and sets its clock. Your video stays on the camera.</li>
-  <li><strong>Location:</strong> to record the GPS track of a run when no external GPS is connected. Recording carries on if the screen locks during a run, and iOS shows the location indicator while it does. The app does not use your location when you are not recording.</li>
+  <li><strong>Location:</strong> to record the GPS track of a run when no external GPS is connected, and (from version 1.1) to fetch the weather where you are. Recording carries on if the screen locks during a run, and iOS shows the location indicator while it does. The app does not use your location when you are not recording.</li>
+  <li><strong>Motion &amp; Fitness (from version 1.1):</strong> to read the iPhone's barometer during a run, for air pressure and road grade. The app does not read your activity or step data.</li>
  </ul>
- <p>You can change either permission at any time in the iPhone's Settings. The app still works without Location if you use an external GPS receiver.</p>
+ <p>You can change these permissions at any time in the iPhone's Settings. The app still works without Location if you use an external GPS receiver, and without Motion &amp; Fitness.</p>
 </section>
 <section aria-labelledby="share">
  <h2 id="share">when_data_leaves_your_iphone</h2>
- <p>Only when you do it yourself:</p>
+ <p>Only for the weather lookup below, or when you do it yourself:</p>
  <ul>
+  <li><strong>Weather (from version 1.1):</strong> when a run starts and when it stops, the app asks <a href="https://open-meteo.com/">Open-Meteo</a> for the current weather at your location, rounded to 0.01 degree (about 1 km). Nothing else is sent with it: no name, account, device ID or cookie. Open-Meteo may log the request, like any web service, under its <a href="https://open-meteo.com/en/terms#privacy">privacy terms</a>. Turn off "Fetch the weather for each run" on the Record screen to stop it; the dyno can still look the weather up later.</li>
   <li><strong>Sharing:</strong> when you share a file from the app or the Files app (AirDrop, Messages, email, cloud storage and so on), it goes where you send it, under that service's privacy policy.</li>
   <li><strong>Backups:</strong> your runs are part of your iPhone's normal iCloud or computer backup, if you have backups turned on.</li>
   <li><strong>The Virtual Dyno:</strong> the "Open the Virtual Dyno" button opens <a href="https://dyno.turboloser.co/">dyno.turboloser.co</a> in your browser. The dyno works on your files inside the browser and does not upload them. If you use its weather lookup, it sends the run's approximate location and time to Open-Meteo to get the weather. The dyno site counts visits with GoatCounter, which does not use cookies or track you across sites.</li>
  </ul>
- <p>We never sell, rent or share data, because we never receive any.</p>
+ <p>We never sell, rent or share data, because we never receive any. The weather request goes from your iPhone straight to Open-Meteo, not to us.</p>
 </section>
 <section aria-labelledby="delete">
  <h2 id="delete">deleting_your_data</h2>
@@ -72,7 +75,7 @@ try{let s;try{s=sessionStorage.getItem("vdl-boot");sessionStorage.setItem("vdl-b
 </section>
 <section aria-labelledby="kids">
  <h2 id="kids">children</h2>
- <p>The app is not directed at children and collects no personal information from anyone, including children under 13.</p>
+ <p>The app is not directed at children and collects no personal information from anyone, including children under 13. The approximate location sent for the weather is not linked to any person.</p>
 </section>
 <section aria-labelledby="changes">
  <h2 id="changes">changes_and_contact</h2>
