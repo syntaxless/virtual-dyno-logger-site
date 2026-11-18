@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<script>try{let p;try{p=localStorage.getItem("vdl-phosphor")}catch{}document.documentElement.dataset.phosphor=["green","color"].includes(p)?p:"green"}catch{}
+try{let s;try{s=sessionStorage.getItem("vdl-boot");sessionStorage.setItem("vdl-boot","1")}catch{}if(!matchMedia("(prefers-reduced-motion:reduce)").matches&&!s)document.documentElement.classList.add("bt")}catch{}</script>
+<title>Virtual Dyno Logger for iPhone</title>
+<meta name="description" content="Record OBD-II, GPS and GoPro at once on your iPhone and get the two files the Virtual Dyno reads. No account, nothing leaves your phone.">
+<link rel="canonical" href="https://dynologger.turboloser.co/">
+<link rel="icon" href="/icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<meta name="theme-color" content="#010503">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Virtual Dyno Logger">
+<meta property="og:title" content="Virtual Dyno Logger for iPhone">
+<meta property="og:description" content="Record OBD-II, GPS and GoPro at once on your iPhone and get the two files the Virtual Dyno reads. No account, nothing leaves your phone.">
+<meta property="og:url" content="https://dynologger.turboloser.co/">
+<link rel="preload" href="/fonts/vt323-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="win">
+<div class="crt" aria-hidden="true"></div>
+<div class="bar"><nav aria-label="Site"><a href="/" aria-current="page">~/logger</a><a href="/support/">support</a><a href="/privacy/">privacy</a></nav><div class="ph" id="phos" role="group" aria-label="Phosphor color"><span class="pl" aria-hidden="true">phosphor</span><button type="button" data-p="green" aria-pressed="true">green</button><button type="button" data-p="color" aria-pressed="false">color</button></div></div>
+<div class="app">
+<header class="hgrp">
+ <div class="boot" aria-hidden="true">trbo@losr:~$ <span class="type">./virtual-dyno-logger</span></div>
+ <h1 class="vh">Virtual Dyno Logger</h1>
+ <div class="ban">
+ <div class="art row" aria-hidden="true">::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::.##.....##.####.########..########.##.....##....###....##.......########..##....##.##....##..#######. ::
+::.##.....##..##..##.....##....##....##.....##...##.##...##.......##.....##..##..##..###...##.##.....## ::
+::.##.....##..##..##.....##....##....##.....##..##...##..##.......##.....##...####...####..##.##.....## ::
+::.##.....##..##..########.....##....##.....##.##.....##.##.......##.....##....##....##.##.##.##.....## ::
+::..##...##...##..##...##......##....##.....##.#########.##.......##.....##....##....##..####.##.....## ::
+::...##.##....##..##....##.....##....##.....##.##.....##.##.......##.....##....##....##...###.##.....## ::
+::....###....####.##.....##....##.....#######..##.....##.########.########.....##....##....##..#######. ::
+::..................................................................................................... ::
+::......................##........#######...######....######...########.########....................... ::
+::......................##.......##.....##.##....##..##....##..##.......##.....##...................... ::
+::......................##.......##.....##.##........##........##.......##.....##...................... ::
+::......................##.......##.....##.##...####.##...####.######...########....................... ::
+::......................##.......##.....##.##....##..##....##..##.......##...##........................ ::
+::......................##.......##.....##.##....##..##....##..##.......##....##....................... ::
+::......................########..#######...######....######...########.##.....##...................... ::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::</div>
+ <div class="art stack" aria-hidden="true">::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::.##.....##.####.########..########.##.....##....###....##...... ::
+::.##.....##..##..##.....##....##....##.....##...##.##...##...... ::
+::.##.....##..##..##.....##....##....##.....##..##...##..##...... ::
+::.##.....##..##..########.....##....##.....##.##.....##.##...... ::
+::..##...##...##..##...##......##....##.....##.#########.##...... ::
+::...##.##....##..##....##.....##....##.....##.##.....##.##...... ::
+::....###....####.##.....##....##.....#######..##.....##.######## ::
+::............................................................... ::
+::.............########..##....##.##....##..#######.............. ::
+::.............##.....##..##..##..###...##.##.....##............. ::
+::.............##.....##...####...####..##.##.....##............. ::
+::.............##.....##....##....##.##.##.##.....##............. ::
+::.............##.....##....##....##..####.##.....##............. ::
+::.............##.....##....##....##...###.##.....##............. ::
+::.............########.....##....##....##..#######.............. ::
+::............................................................... ::
+::...##........#######...######....######...########.########.... ::
+::...##.......##.....##.##....##..##....##..##.......##.....##... ::
+::...##.......##.....##.##........##........##.......##.....##... ::
+::...##.......##.....##.##...####.##...####.######...########.... ::
+::...##.......##.....##.##....##..##....##..##.......##...##..... ::
+::...##.......##.....##.##....##..##....##..##.......##....##.... ::
+::...########..#######...######....######...########.##.....##... ::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::</div>
+ </div>
+ <p class="intro">An iPhone app that records a pull from your <b>OBD-II adapter</b>, a <b>GPS</b> and a <b>GoPro</b> at the same time, then saves the two files the <a href="https://dyno.turboloser.co/">Virtual Dyno</a> reads. No account, no cloud, nothing leaves your phone unless you share it.</p>
+</header>
+<main id="main">
+<section aria-labelledby="get">
+ <h2 id="get">get_the_app</h2>
+ <div class="get">
+  <!-- When the app is live: replace this element with Apple's official "Download on the App Store" badge
+       (https://developer.apple.com/app-store/marketing/guidelines/) wrapped in a link to the App Store listing. -->
+  <span class="store" aria-disabled="true"><small>Coming soon on the</small><span>App Store</span></span>
+  <p>Free for iPhone, iOS 17 or later.<br>Bluetooth needs a real iPhone, so there is no iPad or Mac version.</p>
+ </div>
+</section>
+<section aria-labelledby="rec">
+ <h2 id="rec">what_it_records</h2>
+ <div class="wrap"><table class="tbl">
+  <thead><tr><th scope="col">Source</th><th scope="col">Connects by</th><th scope="col">Records</th></tr></thead>
+  <tbody>
+   <tr><td>ELM327 Bluetooth LE OBD-II adapter<br><span class="meta">OBDLink CX / MX+, Vgate iCar Pro, vLinker, Veepeak...</span></td><td>Bluetooth</td><td>RPM, speed, accelerator pedal or throttle, manifold pressure, barometric pressure, ambient temperature</td></tr>
+   <tr><td>RaceBox Mini / Mini S / Micro</td><td>Bluetooth</td><td>25 Hz GPS: position, speed, heading, altitude</td></tr>
+   <tr><td>Bluetooth GPS sending NMEA</td><td>Bluetooth</td><td>GPS at the receiver's rate</td></tr>
+   <tr><td>The iPhone's own GPS</td><td>Location Services</td><td>About 1 Hz GPS, used when no external GPS is connected</td></tr>
+   <tr><td>GoPro HERO9 or later</td><td>Bluetooth</td><td>Starts and stops video with the run, and sets the camera clock so the video lines up with the logs</td></tr>
+  </tbody>
+ </table></div>
+</section>
+<div class="grid">
+<section aria-labelledby="how">
+ <h2 id="how">how_it_works</h2>
+ <ol class="steps">
+  <li>Pair your adapter, GPS and GoPro on the <strong>Devices</strong> tab. They reconnect on their own after that.</li>
+  <li>Type the vehicle name and press <strong>record</strong>.</li>
+  <li>Floor it in one gear from low RPM to redline on a flat, straight road, then stop.</li>
+  <li>Open the <a href="https://dyno.turboloser.co/">Virtual Dyno</a> and load the <code>.csv</code> and <code>.gpx</code>.</li>
+ </ol>
+ <p class="meta">Tip: a coast in neutral from about 70 to 30 MPH in the same run lets the dyno fit rolling resistance.</p>
+</section>
+<section aria-labelledby="files">
+ <h2 id="files">what_you_get</h2>
+ <pre><span class="c"># Files &gt; On My iPhone &gt; Dyno Logger &gt; Sessions</span>
+GolfR_2026-10-10_170503/
+  GolfR_2026-10-10_170503<span class="a">.csv</span>  <span class="c"># Cobb Accessport log box</span>
+  GolfR_2026-10-10_170503<span class="b">.gpx</span>  <span class="c"># RaceBox, Dragy or GPX box</span>
+  session.json</pre>
+ <p>The CSV uses Cobb Accessport column names and the GPX carries speed on every point, so the dyno reads both without any settings.</p>
+</section>
+</div>
+<section aria-labelledby="priv">
+ <h2 id="priv">privacy</h2>
+ <p><span class="ok">Data not collected.</span> No account, no ads, no analytics, no tracking, and the app makes no network requests of its own. Your runs stay on your iPhone until you share them. <a href="/privacy/">Read the privacy policy</a>.</p>
+</section>
+</main>
+<footer class="foot"><a href="/">Home</a>·<a href="/support/">Support</a>·<a href="/privacy/">Privacy</a>·<a href="https://dyno.turboloser.co/">Virtual Dyno</a><br>© 2026 turboloser.co. Not affiliated with Cobb Tuning, RaceBox, GoPro or Apple.</footer>
+<div class="ps1" aria-hidden="true">trbo@losr:~$ <i></i></div>
+</div>
+<script src="/site.js"></script>
+</body></html>

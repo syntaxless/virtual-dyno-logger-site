@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<script>try{let p;try{p=localStorage.getItem("vdl-phosphor")}catch{}document.documentElement.dataset.phosphor=["green","color"].includes(p)?p:"green"}catch{}
+try{let s;try{s=sessionStorage.getItem("vdl-boot");sessionStorage.setItem("vdl-boot","1")}catch{}if(!matchMedia("(prefers-reduced-motion:reduce)").matches&&!s)document.documentElement.classList.add("bt")}catch{}</script>
+<title>Support · Virtual Dyno Logger</title>
+<meta name="description" content="Help with Virtual Dyno Logger: supported adapters and GPS receivers, GoPro pairing, finding your files and loading them into the Virtual Dyno.">
+<link rel="canonical" href="https://dynologger.turboloser.co/support/">
+<link rel="icon" href="/icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<meta name="theme-color" content="#010503">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Virtual Dyno Logger">
+<meta property="og:title" content="Support · Virtual Dyno Logger">
+<meta property="og:description" content="Help with Virtual Dyno Logger: supported adapters and GPS receivers, GoPro pairing, finding your files and loading them into the Virtual Dyno.">
+<meta property="og:url" content="https://dynologger.turboloser.co/support/">
+<link rel="preload" href="/fonts/vt323-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="win">
+<div class="crt" aria-hidden="true"></div>
+<div class="bar"><nav aria-label="Site"><a href="/">~/logger</a><a href="/support/" aria-current="page">support</a><a href="/privacy/">privacy</a></nav><div class="ph" id="phos" role="group" aria-label="Phosphor color"><span class="pl" aria-hidden="true">phosphor</span><button type="button" data-p="green" aria-pressed="true">green</button><button type="button" data-p="color" aria-pressed="false">color</button></div></div>
+<div class="app">
+<header class="hgrp">
+ <div class="boot" aria-hidden="true">trbo@losr:~$ <span class="type" style="--w:13ch;--n:13">man dyno-log</span></div>
+ <h1 class="page">Support</h1>
+ <p class="intro">Help with <b>Virtual Dyno Logger</b> for iPhone. If something here doesn't answer it, email us.</p>
+</header>
+<main id="main">
+<section aria-labelledby="contact">
+ <h2 id="contact">contact</h2>
+ <p><a class="mail" href="mailto:support@turboloser.co?subject=Virtual%20Dyno%20Logger%20support">support@turboloser.co</a></p>
+ <p>We usually answer within a couple of days. It helps to include your iPhone model and iOS version, the app version, your OBD-II adapter and GPS, and the car's year and model. If a run looks wrong in the dyno, attach its <code>.csv</code> and <code>.gpx</code>.</p>
+</section>
+<section aria-labelledby="start">
+ <h2 id="start">quick_start</h2>
+ <ol class="steps">
+  <li>Plug the OBD-II adapter into the car and turn the ignition on.</li>
+  <li>In the app, open <strong>Devices</strong>, tap your adapter, GPS receiver and GoPro. Allow Bluetooth and Location when iOS asks.</li>
+  <li>On <strong>Record</strong>, type the vehicle name and start recording. Do one full-throttle pull in a single gear, then stop.</li>
+  <li>On <strong>Sessions</strong>, open the run, then tap <strong>Open the Virtual Dyno</strong>. Load the <code>.csv</code> in the "Cobb Accessport log" box and the <code>.gpx</code> in the "RaceBox, Dragy or GPX" box.</li>
+ </ol>
+</section>
+<section aria-labelledby="faq">
+ <h2 id="faq">faq</h2>
+ <details><summary>Which OBD-II adapters work?</summary>
+  <p>Bluetooth LE adapters that speak ELM327, such as OBDLink CX and MX+, Vgate iCar Pro, vLinker and Veepeak BLE models. Classic-Bluetooth-only adapters and Wi-Fi adapters don't work with iPhone apps that use Bluetooth LE.</p></details>
+ <details><summary>Why is my engine log slow?</summary>
+  <p>The rate depends on the car. CAN cars (most 2008 and later) answer all the fast values in one request and give roughly 10 to 25 rows a second through a good adapter. Older protocols are much slower. A faster adapter such as an OBDLink helps.</p></details>
+ <details><summary>Which GPS receivers work?</summary>
+  <p>RaceBox Mini, Mini S and Micro (25 Hz), and Bluetooth GPS receivers that send NMEA over the Nordic UART service. With no external GPS connected, the app uses the iPhone's own GPS at about 1 Hz.</p></details>
+ <details><summary>Does it work with Dragy?</summary>
+  <p>Not directly, because Dragy's Bluetooth protocol isn't public. Export the run from the Dragy app and load its CSV into the Virtual Dyno's GPS box, which reads Dragy files.</p></details>
+ <details><summary>How do I connect my GoPro?</summary>
+  <p>HERO9 or later. The first time, put the camera in pairing mode (Preferences &gt; Wireless Connections &gt; Connect Device &gt; GoPro Quik), then tap it on the Devices tab. After that it reconnects on its own, starts and stops recording with your run, and has its clock set to the phone's so the video lines up with the logs.</p></details>
+ <details><summary>Where are my files?</summary>
+  <p>In the Files app under On My iPhone &gt; Dyno Logger &gt; Sessions, one folder per run. You can also share a single file from the run's page in the app.</p></details>
+ <details><summary>The pull doesn't show up in the dyno.</summary>
+  <p>The dyno only counts a pull above its "Throttle Position &gt;=" field (90 % by default). The app rescales the pedal so a floored pedal reads 100 %, but if your car's pedal sensor reads unusually low, lower that field a little.</p></details>
+ <details><summary>A device won't connect or keeps dropping.</summary>
+  <p>Check that Bluetooth is on and that the app is allowed to use it (Settings &gt; Privacy &amp; Security &gt; Bluetooth). Make sure no other app is connected to the same adapter. Unplug the adapter for a few seconds, then try again. If the phone GPS shows no points, check Settings &gt; Privacy &amp; Security &gt; Location Services for the app.</p></details>
+ <details><summary>How do I delete a run?</summary>
+  <p>Swipe left on it in Sessions, or delete its folder in the Files app. Deleting the app deletes every run.</p></details>
+</section>
+<section aria-labelledby="req">
+ <h2 id="req">requirements</h2>
+ <ul>
+  <li>iPhone with iOS 17 or later</li>
+  <li>A Bluetooth LE ELM327 OBD-II adapter for engine data (optional if you only want GPS)</li>
+  <li>The free <a href="https://dyno.turboloser.co/">Virtual Dyno</a> in any browser to turn the files into a power curve</li>
+ </ul>
+ <p class="warn">Only record on a closed course or where it is legal and safe. Keep your eyes on the road, not the phone.</p>
+</section>
+</main>
+<footer class="foot"><a href="/">Home</a>·<a href="/support/">Support</a>·<a href="/privacy/">Privacy</a>·<a href="https://dyno.turboloser.co/">Virtual Dyno</a><br>© 2026 turboloser.co. Not affiliated with Cobb Tuning, RaceBox, GoPro or Apple.</footer>
+<div class="ps1" aria-hidden="true">trbo@losr:~$ <i></i></div>
+</div>
+<script src="/site.js"></script>
+</body></html>
